@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#ffffff</color>
+    <color name="gray">#8c8c8c</color>
+    <color name="gray_deep">#5c5c5c</color>
+    <color name="alpha_gray">#CC646464</color>
+
+    <!-- 主题颜色 -->
+    <color name="themeColor">#C7EDCC</color>
+
+    <!-- BottomBar颜色 -->
+    <color name="bottom_bar_color">#C7EDCC</color>
+
+    <!-- SwipeRefreshLayout刷新时的颜色 -->
+    <color name="refreshing">#C7EDCC</color>
+
+    <color name="line">#EEEEEE</color>
+
+    <color name="recycler_view_font">#BDBDBD</color>
+
+    <!-- 字体颜色 -->
+    <color name="font_color">#000000</color>
+
+    <color name="input_bg">#ffffff</color>
+
+    <!-- WelcomeActivity的两个按钮字体颜色 -->
+    <color name="welcomeText">#4682B4</color>
+
+    <color name="SignInputBoxTextColor">#ffb9b9b9</color>
+    <color name="SignInputBoxPlaceHolder">#ffb9b9b9</color>
+
+    <!-- 登录界面的EditText背景色 -->
+    <color name="LoginEditBg">#ffffffff</color>
+    <!-- 登录界面和注册界面的分割线 -->
+    <color name="DividerColor">#ffeaebed</color>
+    <!-- 登录按钮的颜色 -->
+    <color name="btnLoginColor">#323f48</color>
+    <color name="btnLoginPressed">#252e35</color>
+    <!-- 注册按钮和忘记密码按钮的颜色 -->
+    <color name="btnRegisterText">#252e35</color>
+
+    <!-- 登录按钮和注册按钮的颜色 -->
+    <color name="btn_press">#ff336BA3</color>
+
+    <!-- WebActivity的进度条颜色 -->
+    <color name="web_progress_bar_color">#A199E9</color>
+
+    <color name="content_bg">#F3F3F3</color>
+    <color name="top">#7A8C92</color>
+
+    <!--编辑资料EditText字体颜色-->
+    <color name="edit_info">#696982</color>
+
+    <!--分享TextView颜色-->
+    <color name="font_share">#393939</color>
+
+    <!--点击黄色按钮为press的颜色-->
+    <color name="press_yellow">#C7EDCC</color>
+
+    <!--字体浅黑色-->
+    <color name="font_gray">#2A2A2A</color>
+
+    <!--编辑资料偏灰色背景颜色-->
+    <color name="bg_edit">#E7E7E7</color>
+    <color name="apart_gray">#5A5A5B</color>
+
+    <!--FragmentFive关注和被关注文字颜色-->
+    <color name="font_focus">#8e7437</color>
+
+    <color name="hotTap_Color">#66CC99</color>
+
+    <color name="primary">#03A9F4</color>
+
+    <!-- 裁剪工具的颜色 -->
+    <color name="multiple_image_select_primary">#C7EDCC</color>
+    <color name="multiple_image_select_primaryDark">#C7EDCC</color>
+
+    <!--筹游界面 scrollView背景色-->
+    <color name="bg_raise_scroll">#fdf5f5</color>
+
+    <color name="black_overlay">#66000000</color>
+</resources>
