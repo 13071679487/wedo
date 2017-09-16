@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import wedo.job.R;
+import wedo.job.util.PreferenceUtils;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
     private Button btn_login,btn_register,btn_find_password;
@@ -36,6 +38,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.btn_login:
+                //使用sp记录登录状态
+                PreferenceUtils.write(this,"userConfig","hasLogin",true);
+                Toast.makeText(this,"登陆成功...",Toast.LENGTH_SHORT).show();
+                this.finish();
                 break;
             case R.id.btn_register:
                 Intent i=new Intent(LoginActivity.this,RegisterActivity.class);

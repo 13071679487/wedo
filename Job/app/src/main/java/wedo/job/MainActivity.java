@@ -2,6 +2,9 @@ package wedo.job;
 
 import android.support.annotation.IdRes;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.widget.Toast;
 
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
@@ -50,9 +53,6 @@ public class MainActivity extends SupportActivity implements BaseMainFragment.On
         bottomBar.selectTabAtPosition(0);
     }
     private void initBottomBar() {
-        /**
-         * 导航栏第一次点击事件
-         */
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(@IdRes int tabId) {
@@ -60,14 +60,17 @@ public class MainActivity extends SupportActivity implements BaseMainFragment.On
                     case R.id.tab_recents:
                         showHideFragment(mFragments[0], mFragments[prePosition]);
                         prePosition = 0;
+                        invalidateOptionsMenu();
                         break;
                     case R.id.tab_favorites:
                         showHideFragment(mFragments[1], mFragments[prePosition]);
                         prePosition = 1;
+                        invalidateOptionsMenu();
                         break;
                     case R.id.tab_me:
                         showHideFragment(mFragments[2], mFragments[prePosition]);
                         prePosition = 2;
+                        invalidateOptionsMenu();
                         break;
                 }
             }

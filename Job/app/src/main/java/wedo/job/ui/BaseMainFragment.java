@@ -8,7 +8,6 @@ import me.yokeyword.fragmentation.SupportFragment;
 import wedo.job.fragment.first.FragmentOne;
 
 
-
 public abstract class BaseMainFragment extends SupportFragment {
     private boolean mInited = false;
     protected OnBackToFirstListener _mBackToFirstListener;
@@ -47,7 +46,6 @@ public abstract class BaseMainFragment extends SupportFragment {
                 //initLazyView(null);
             }
         } else {
-            // isSupportHidden()仅在saveInstanceState!=null时有意义,是库帮助记录Fragment状态的方法
             if (!isSupportHidden()) {
                 mInited = true;
                 //initLazyView(savedInstanceState);
@@ -74,14 +72,15 @@ public abstract class BaseMainFragment extends SupportFragment {
         if (getChildFragmentManager().getBackStackEntryCount() > 1) {
             popChild();
         } else {
-            if (this instanceof FragmentOne) {   // 如果是 第一个Fragment 则退出app
-                _mActivity.finish();
+            if (this instanceof FragmentOne) {
             } else {                                    // 如果不是,则回到第一个Fragment
                 _mBackToFirstListener.onBackToFirstFragment();
             }
         }
         return true;
     }
+
+
 
     public interface OnBackToFirstListener {
         void onBackToFirstFragment();

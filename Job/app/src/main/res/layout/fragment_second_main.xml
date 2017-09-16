@@ -1,14 +1,37 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/secondContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="wedo.job.fragment.second.FragmentTwo">
 
-    <!-- TODO: Update blank fragment layout -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/themeColor"
+        android:titleTextColor="@color/btnLoginPressed"
+        app:popupTheme="@style/ToolbarStyle"
+        >
+        <RelativeLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btn_overflow"
+                android:background="@drawable/login_input_user"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
     <TextView
         android:text="第二个页面"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        ></TextView>
-</FrameLayout>
+        />
+</LinearLayout>
