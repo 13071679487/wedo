@@ -1,79 +1,83 @@
 package wedo.job;
 
+import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.support.annotation.IdRes;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.widget.Toast;
+import android.support.v7.app.AppCompatActivity;
 
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 
-import me.yokeyword.fragmentation.SupportActivity;
-import me.yokeyword.fragmentation.SupportFragment;
 import wedo.job.fragment.first.FragmentOne;
 import wedo.job.fragment.second.FragmentTwo;
 import wedo.job.fragment.third.FragmentThree;
-import wedo.job.ui.BaseMainFragment;
 
 
-public class MainActivity extends SupportActivity implements BaseMainFragment.OnBackToFirstListener{
+public class MainActivity extends AppCompatActivity {
     public static final int FIRST = 0;
     public static final int SECOND = 1;
     public static final int THIRD = 2;
 
     private BottomBar bottomBar;
-    private int prePosition;
-    private SupportFragment[] mFragments = new SupportFragment[3];
+    private int prePosition = 0;
+    private Fragment[] mFragments = new Fragment[3];
+
+    private FragmentManager fragmentManager=getFragmentManager();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        bottomBar= (BottomBar) findViewById(R.id.bottomBar);
-        if(savedInstanceState == null) {
-            mFragments[FIRST] = FragmentOne.newInstance();
-            mFragments[SECOND] = FragmentTwo.newInstance();
-            mFragments[THIRD] = FragmentThree.newInstance();
-
-            loadMultipleRootFragment(R.id.contentContainer,FIRST,
-                    mFragments[FIRST],
-                    mFragments[SECOND],
-                    mFragments[THIRD]);
-        }else {
-            mFragments[FIRST] = findFragment(FragmentOne.class);
-            mFragments[SECOND] = findFragment(FragmentTwo.class);
-            mFragments[THIRD] = findFragment(FragmentThree.class);
-        }
+        bottomBar = (BottomBar) findViewById(R.id.bottomBar);
+        initData();
         initBottomBar();
     }
-
-    @Override
-    public void onBackToFirstFragment() {
-        bottomBar.selectTabAtPosition(0);
+    public void initData(){
+        mFragments[FIRST] = FragmentOne.newInstance();
+        mFragments[SECOND] = FragmentTwo.newInstance();
+        mFragments[THIRD] = FragmentThree.newInstance();
+        fragmentManager.beginTransaction().add(R.id.contentContainer,mFragments[FIRST]).commit();
+        fragmentManager.beginTransaction().add(R.id.contentContainer,mFragments[SECOND]).commit();
+        fragmentManager.beginTransaction().add(R.id.contentContainer,mFragments[THIRD]).commit();
+        fragmentManager.beginTransaction().show(mFragments[FIRST]).commit();
+        fragmentManager.beginTransaction().hide(mFragments[SECOND]).commit();
+        fragmentManager.beginTransaction().hide(mFragments[THIRD]).commit();
     }
+
+
     private void initBottomBar() {
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(@IdRes int tabId) {
                 switch (tabId) {
                     case R.id.tab_recents:
-                        showHideFragment(mFragments[0], mFragments[prePosition]);
+                        replaceFragmentToContainer(0,mFragments[FIRST]);
                         prePosition = 0;
-                        invalidateOptionsMenu();
                         break;
                     case R.id.tab_favorites:
-                        showHideFragment(mFragments[1], mFragments[prePosition]);
+                        replaceFragmentToContainer(1,mFragments[SECOND]);
                         prePosition = 1;
-                        invalidateOptionsMenu();
                         break;
                     case R.id.tab_me:
-                        showHideFragment(mFragments[2], mFragments[prePosition]);
+                        replaceFragmentToContainer(2,mFragments[THIRD]);
                         prePosition = 2;
-                        invalidateOptionsMenu();
                         break;
                 }
             }
         });
     }
+
+    public  void replaceFragmentToContainer(int pos,Fragment frag) {
+        if(pos!=prePosition)
+            getFragmentManager().beginTransaction().show(frag).commit();
+        for(int i=0;i<mFragments.length;i++){
+            if(i!=pos){
+                getFragmentManager().beginTransaction().hide(mFragments[i]).commit();
+            }
+        }
+    }
+
 }

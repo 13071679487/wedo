@@ -1,29 +1,28 @@
 package wedo.job.fragment.third;
 
+import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.support.v7.widget.Toolbar;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 import wedo.job.R;
-import wedo.job.ui.BaseMainFragment;
+import wedo.job.fragment.third.child.EditActivity;
 
 
-public class FragmentThree extends BaseMainFragment {
+public class FragmentThree extends Fragment {
     private ImageView iv_head;
     private Toolbar toolbar;
 
+    private View head_layout;
 
     public static FragmentThree newInstance() {
         Bundle args = new Bundle();
@@ -35,7 +34,7 @@ public class FragmentThree extends BaseMainFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_third_main, container, false);
+        View view = inflater.inflate(R.layout.fragment_three, container, false);
         initView(view);
         initEvent();
         getArgs();
@@ -43,6 +42,7 @@ public class FragmentThree extends BaseMainFragment {
     }
 
     public void initView(View view) {
+        head_layout=view.findViewById(R.id.head_layout);
         toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         toolbar.setTitle("2276");
         //设置系统的actionbar为我们的toolbar
@@ -53,7 +53,13 @@ public class FragmentThree extends BaseMainFragment {
     }
 
     public void initEvent() {
-
+        head_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getActivity(), EditActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
 

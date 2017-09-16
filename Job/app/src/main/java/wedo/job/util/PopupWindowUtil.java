@@ -24,18 +24,35 @@ public abstract class PopupWindowUtil {
         pop.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
         pop.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
         pop.setOutsideTouchable(true);
+        pop.setBackgroundDrawable(null);
         pop.showAtLocation(parent, Gravity.CENTER,0,0);
     }
 
-    //第一个fragment的溢出菜单工具
-    public static void showPopupWindowOverFlowMenuOne(Context context, int resId, View parent, int offX, int offY) {
+    //fragment的溢出菜单工具
+    public static void showPopupWindowOverFlowMenu(Context context, int resId, View parent) {
         LayoutInflater inflater = LayoutInflater.from(context);
         contentView = inflater.inflate(resId, null);
         pop = new PopupWindow(context);
         pop.setContentView(contentView);
+        pop.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
+        pop.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
         pop.setOutsideTouchable(true);
-        pop.showAsDropDown(parent, offX, offY);
+        pop.setBackgroundDrawable(null);
+        pop.showAsDropDown(parent);
     }
+
+    //fragment的溢出菜单工具
+    public static void showPopupWindowWhenExit(Context context, int resId, View parent) {
+        LayoutInflater inflater = LayoutInflater.from(context);
+        contentView = inflater.inflate(resId, null);
+        pop = new PopupWindow(context);
+        pop.setContentView(contentView);
+        pop.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
+        pop.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+        pop.setBackgroundDrawable(null);
+        pop.showAtLocation(parent, Gravity.CENTER,0,0);
+    }
+
     public static View getContentView(){
         if(contentView!=null)
             return contentView;
