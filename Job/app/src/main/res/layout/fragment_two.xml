@@ -22,7 +22,7 @@
 
             <Button
                 android:id="@+id/btn_overflow"
-                android:background="@drawable/login_input_user"
+                android:background="@drawable/ic_setting"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="5dp"
                 android:layout_width="25dp"

@@ -11,12 +11,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import wedo.job.R;
+import wedo.job.fragment.BackHandleFragment;
 import wedo.job.util.PopupWindowUtil;
 
 
-public class FragmentOne extends Fragment {
+public class FragmentOne extends BackHandleFragment {
     private Toolbar toolbar;
     //toolbar上面的溢出菜单
     private Button btn_overflow;
@@ -76,12 +78,21 @@ public class FragmentOne extends Fragment {
         });
     }
 
-//        clickNum++;
-//        Message msg = Message.obtain();
-//        msg.what = 0;
-//        handler.sendMessageDelayed(msg, 1500);
-//        if (clickNum >= 2)
-//            showExitDialog();
+    private void getArgs() {
+        Bundle bundle = getArguments();
+
+    }
+
+    @Override
+    public boolean onBackPressed() {
+        clickNum++;
+        Message msg = Message.obtain();
+        msg.what = 0;
+        handler.sendMessageDelayed(msg, 1500);
+        if (clickNum >= 2)
+            showExitDialog();
+        return true;
+    }
 
     public void showExitDialog() {
         PopupWindowUtil.showPopupWindowWhenExit(getContext(), R.layout.exit_dialog_layout, container);
@@ -99,10 +110,5 @@ public class FragmentOne extends Fragment {
                 PopupWindowUtil.getPopupWindow().dismiss();
             }
         });
-    }
-
-    private void getArgs() {
-        Bundle bundle = getArguments();
-
     }
 }

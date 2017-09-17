@@ -8,11 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v7.widget.Toolbar;
+import android.widget.Toast;
 
+import wedo.job.MainActivity;
 import wedo.job.R;
+import wedo.job.fragment.BackHandleFragment;
 
 
-public class FragmentTwo extends Fragment {
+public class FragmentTwo extends BackHandleFragment {
     private Toolbar toolbar;
 
     public static FragmentTwo newInstance() {
@@ -48,5 +51,15 @@ public class FragmentTwo extends Fragment {
     private void getArgs(){
         Bundle bundle = getArguments();
 
+    }
+
+    @Override
+    public boolean onBackPressed() {
+        getFragmentManager().beginTransaction().hide(this).commit();
+        if(getActivity() instanceof MainActivity){
+            MainActivity mainActivity= (MainActivity) getActivity();
+            mainActivity.backToFirstFragment();
+        }
+        return true;
     }
 }

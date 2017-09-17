@@ -12,19 +12,27 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:background="@color/themeColor" >
+        android:background="@color/themeColor">
+
         <RelativeLayout
-            android:gravity="center_vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
 
             <Button
-                android:text="保存"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="5dp"
+                android:id="@+id/btn_callback"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/callback" />
+
+            <Button
+                android:id="@+id/btn_save"
                 android:layout_width="50dp"
                 android:layout_height="30dp"
-                android:background="@drawable/btn_save_bg"/>
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/btn_exit_bg"
+                android:text="保存" />
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
 
@@ -34,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="10dp"
-        android:background="@color/white"
+        android:background="@drawable/item_selected_bg"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -82,12 +90,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
             android:background="@color/white"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <EditText
-                android:layout_margin="5dp"
+                android:paddingLeft="5dp"
+                android:layout_margin="2dp"
+                android:textSize="18sp"
+                android:textColor="@color/alpha_gray"
                 android:background="@drawable/edit_bg"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -108,5 +121,15 @@
 
         </LinearLayout>
     </LinearLayout>
+    <Button
+        android:id="@+id/btn_exit"
+        android:background="@drawable/btn_exit_bg"
+        android:text="@string/exit"
+        android:textSize="18sp"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
 
 </LinearLayout>

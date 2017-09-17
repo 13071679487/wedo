@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tabs>
     <tab
-        id="@+id/tab_recents"
+        id="@+id/tab_job"
         title="职" />
     <tab
-        id="@+id/tab_favorites"
+        id="@+id/tab_discovery"
         title="问" />
     <tab
         id="@+id/tab_me"

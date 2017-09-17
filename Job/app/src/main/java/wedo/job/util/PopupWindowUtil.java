@@ -41,7 +41,7 @@ public abstract class PopupWindowUtil {
         pop.showAsDropDown(parent);
     }
 
-    //fragment的溢出菜单工具
+    //app退出对话框工具
     public static void showPopupWindowWhenExit(Context context, int resId, View parent) {
         LayoutInflater inflater = LayoutInflater.from(context);
         contentView = inflater.inflate(resId, null);

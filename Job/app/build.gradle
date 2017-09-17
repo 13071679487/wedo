@@ -24,15 +24,17 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    /* BottomBar */
+    /* Glide图片加载库 */
+    /*GoodView*/
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
     compile 'com.android.support:support-v4:25.3.1'
-    testCompile 'junit:junit:4.12'
-    /* BottomBar */
     compile 'com.roughike:bottom-bar:2.0.2'
-    /* Glide图片加载库 */
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'jp.wasabeef:glide-transformations:2.0.1'
-    /* Fragment加载的优化 */
     compile 'me.yokeyword:fragmentation:0.7.10'
+    compile 'com.wx.goodview:goodview:1.0.0'
+    compile 'com.jph.takephoto:takephoto_library:3.0.4'
+    testCompile 'junit:junit:4.12'
 }

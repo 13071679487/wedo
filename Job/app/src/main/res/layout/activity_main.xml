@@ -17,10 +17,10 @@
     <com.roughike.bottombar.BottomBar
             android:id="@+id/bottomBar"
             android:layout_width="match_parent"
-            android:layout_height="180px"
+            android:layout_height="60dp"
             android:background="#FFFFFF"
             app:bb_tabXmlResource="@xml/bottombar_tabs"
             app:bb_inActiveTabAlpha="0.8"
             app:bb_inActiveTabColor="@color/gray_deep"
-            app:bb_activeTabColor="@color/bottom_bar_color" />
+            app:bb_activeTabColor="@color/themeColor_deep" />
 </LinearLayout>

@@ -41,7 +41,12 @@
             android:name=".activity.WelcomeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_welcome"
-            android:theme="@style/FullscreenTheme"></activity>
+            android:theme="@style/FullscreenTheme" />
+        <activity android:name=".fragment.third.child.SuggestionActivity" />
+        <activity android:name=".fragment.third.child.AboutActivity" />
+        <activity android:name=".fragment.third.child.SettingActivity" />
+        <activity android:name=".fragment.third.child.MessageActivity" />
+        <activity android:name=".fragment.third.child.EditHeadiconActivity"></activity>
     </application>
 
 </manifest>

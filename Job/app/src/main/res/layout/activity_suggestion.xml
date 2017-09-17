@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/firstContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="wedo.job.fragment.first.FragmentOne">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/themeColor">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+
+            <Button
+                android:id="@+id/btn_callback"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/callback" />
+
+            <Button
+                android:id="@+id/btn_commit"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/btn_exit_bg"
+                android:text="提交" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <EditText
+        android:hint="你们的app出了点问题哦"
+        android:layout_width="match_parent"
+        android:textSize="15sp"
+        android:textColor="@color/alpha_gray"
+        android:layout_height="200dp"
+        android:layout_margin="10dp"
+        android:padding="5dp"
+        android:lines="15"
+        android:background="@drawable/item_bg" />
+    <TextView
+        android:layout_margin="5dp"
+        android:textSize="13sp"
+        android:text="您的宝贵建议是我们把APP做好的动力"
+        android:textColor="@color/alpha_gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

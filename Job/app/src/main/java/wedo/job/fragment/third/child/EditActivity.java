@@ -17,7 +17,7 @@ public class EditActivity extends SupportActivity {
         initData();
     }
 
-    public void initData(){
+    public void initData() {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add
